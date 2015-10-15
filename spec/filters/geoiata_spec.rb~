@@ -13,9 +13,9 @@ describe LogStash::Filters::Geoiata do
     CONFIG
     end
 
-    sample("code" => "NCE") do
-      expect(subject).to include("geoip")
-      expect(subject['geoip']['city_name']).to eq('Nice')
+    sample("message" => "some text") do
+      expect(subject).to include("message")
+      expect(subject['message']).to eq('Hello World')
     end
   end
 end
